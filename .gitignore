@@ -1,0 +1,27 @@
+# Data and model artifacts (do not commit)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+models/*.pth
+models/*.pt
+results/*
+# ...except the figures the README embeds, which must travel with the repo
+# ("results/*" not "results/" -- git won't apply per-file negations below a
+# fully-ignored directory)
+!results/per_class_ap_test.png
+!results/predictions_vs_truth_test.png
+!results/loss_curve.png
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS
+.DS_Store

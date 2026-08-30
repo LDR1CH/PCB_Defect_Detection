@@ -1,0 +1,18 @@
+# PyTorch must come from PyTorch's own index, NOT plain PyPI: on Windows the
+# default PyPI wheel is CPU-only, which silently disables the GPU.  cu130 is
+# required for Blackwell cards (RTX 50-series, sm_120) -- the cu128 index tops
+# out at torch 2.11.  On a machine without an NVIDIA GPU, drop the two lines
+# below and the index URL, and use plain `torch` / `torchvision` instead.
+--extra-index-url https://download.pytorch.org/whl/cu130
+torch==2.13.0+cu130
+torchvision==0.28.0+cu130
+
+gradio==6.26.0
+torchmetrics==1.9.0
+pycocotools==2.0.11   # torchmetrics' MeanAveragePrecision uses it as its COCO backend
+matplotlib==3.11.1
+seaborn==0.13.2
+numpy==2.5.2
+pillow==12.3.0
+opencv-python==5.0.0.93
+pandas==3.0.5
